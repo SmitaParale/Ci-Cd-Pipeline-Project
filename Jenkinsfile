@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS = 'dockerhub-creds' // Replace with your Jenkins Docker Hub credentials ID
-        IMAGE_NAME = 'instantprachi/my-app'       // Replace with your Docker Hub repo
+        DOCKERHUB_CREDENTIALS = 'docker-hub-creds' // Replace with your Jenkins Docker Hub credentials ID
+        IMAGE_NAME = 'smita694/realworldweb'       // Replace with your Docker Hub repo
     }
 
     stages {
@@ -22,7 +22,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("${IMAGE_NAME}:latest")
+                    docker.build("smita694/realworldweb:latest")
                 }
             }
         }
@@ -30,8 +30,8 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    docker.withRegistry('', "${DOCKERHUB_CREDENTIALS}") {
-                        docker.image("${IMAGE_NAME}:latest").push()
+                    docker.withRegistry('', 'docker-hub-creds') {
+                        docker.image("smita694/realworldweb:latest").push()
                     }
                 }
             }
