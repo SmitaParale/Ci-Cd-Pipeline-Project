@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smita — Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Smita</h1>
+        <p class="muted">Cloud • DevOps • Web</p>
+      </div>
+
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Hello, I'm <span class="accent">Smita</span></h2>
+          <p class="lead" id="typed">I build cloud-native apps, automate infra, and ship code.</p>
+          <p><a class="cta" href="#projects">View Projects</a></p>
+        </div>
+
+        <div class="hero-card">
+          <!-- local uploaded image path (will be served from EC2 file system) -->
+          <img src="/mnt/data/aeba6199-dfcb-4e16-8dc9-39b2be1ecb54.png" alt="Profile" class="avatar"/>
+          <h3>Smita</h3>
+          <p class="muted">MSc IT (Cloud) · AWS · Docker · Terraform</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h3>About Me</h3>
+        <p>
+          I'm focused on cloud computing, automation and containerized deployments.
+          I enjoy building small, reliable systems using AWS, Docker and CI/CD pipelines.
+        </p>
+        <ul class="skills">
+          <li>AWS</li><li>Docker</li><li>Terraform</li><li>Ansible</li><li>Jenkins</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section alt">
+      <div class="container">
+        <h3>Selected Projects</h3>
+
+        <div class="grid">
+          <article class="card">
+            <h4>Portfolio Deploy (this demo)</h4>
+            <p>Docker + EC2 automated deploy using Ansible. Click to view repo or demo.</p>
+            <p class="muted">Tech: nginx, Docker, Ansible</p>
+          </article>
+
+          <article class="card">
+            <h4>Edge vs Cloud Study</h4>
+            <p>Performance evaluation for real-time applications — literature review & experiments.</p>
+            <p class="muted">Tech: AWS, benchmarking</p>
+          </article>
+
+          <article class="card">
+            <h4>CI/CD Pipeline</h4>
+            <p>Declarative Jenkinsfile which builds, tags and pushes Docker images to Docker Hub.</p>
+            <p class="muted">Tech: Jenkins, DockerHub</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div>
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:you@example.com">smita123@gmail.com</a></p>
+          <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/smita456</a></p>
+        </div>
+
+        <form id="contactForm" class="card contact-form" onsubmit="handleForm(event)">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required />
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+
+          <button type="submit" class="cta">Send</button>
+          <p id="formStatus" class="muted small"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Smita — Built with Docker & AWS</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
